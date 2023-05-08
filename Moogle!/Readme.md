@@ -27,4 +27,4 @@ normal)
 
 7. Pueden existir combinaciones de los operadores. (uno en cada palabra distinta, no puede
 haber dos juntos en una misma palabra)
-Estructura del Proyecto (Dentro de la carpeta M
+
