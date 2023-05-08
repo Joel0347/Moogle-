@@ -85,7 +85,7 @@ namespace MoogleEngine;
       }
 
       // Método para multiplicar una matriz por un escalar.
-      public Matriz MultByEscalar(int escalar)
+      public Matriz MultByEscalar(double escalar)
       {
         double[,] producto = new double[this.filas, this.columnas];
 
