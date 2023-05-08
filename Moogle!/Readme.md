@@ -1,3 +1,6 @@
+Nombre: Joel Aparicio Tamayo.
+Grupo: C-121.
+
 Especificaciones y particularidades:
 
 1. El proyecto ha sido probado con un repositorio de alrededor de 15 mil documentos cuyo peso
