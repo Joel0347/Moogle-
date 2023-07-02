@@ -87,5 +87,5 @@ public static class Repository
                         wordsFrequency[i][key] = Document.TF(frec, filesWords[i].Length);
                   }   
             }
-     }
+      }
 }
