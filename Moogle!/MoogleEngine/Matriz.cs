@@ -118,7 +118,6 @@ namespace MoogleEngine;
       // Método para obtener la traspuesta de una matriz.
       public Matriz Traspuesta()
       {
-        if(this.filas != this.columnas) throw new InvalidOperationException("La matriz no es cuadrada");
         double[,] traspuesta = new double[this.filas, this.columnas];
 
         for (int i = 0; i < this.filas; i++)
