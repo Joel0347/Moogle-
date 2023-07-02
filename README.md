@@ -21,8 +21,7 @@ documento.
 
 Se ha implementado el operador de relevancia ( * ), el operador de obligatoriedad ( ^ ), y el operador de inexistencia ( ! ). 
 
-Los operadores ^ y ! funcionan solo para la primera palabra de la query que los tenga. (Ej: “!hola !claudia” solo funcionará para “hola”, mientras que a
-“claudia” la tratará como una palabra normal)
+Los operadores ^ y ! funcionan solo para la primera palabra de la query que los tenga. (Ej: “!hola !claudia” solo funcionará para “hola”, mientras que a “claudia” la tratará como una palabra normal)
 
 Pueden existir combinaciones de los operadores. (uno en cada palabra distinta, no puede haber dos juntos en una misma palabra)
     
