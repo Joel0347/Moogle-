@@ -27,6 +27,9 @@ public static class Moogle
         el operador ! */
         Dictionary<string,float> RelevanceValues = Operators.ValueOfRelevance(justQuery,NotContainsWordIndex);
 
+        // Guardamos los valores dados por el operador de cercanía.
+        double[] ClosenessValues = Operators.Closeness(justQuery);
+
         // Guardamos las veces que se repite cada palabra en la query.
         Dictionary<string, int> cantVeces = new Dictionary<string, int>();
 
@@ -57,7 +60,7 @@ public static class Moogle
         }
 
         // Guardamos los scores por medio de la función GetScore de la clase RankingVector.
-        float[] score = RankingVector.GetScore(wordsQuery, IDF); 
+        float[] score = RankingVector.GetScore(wordsQuery, IDF, ClosenessValues); 
 
         // Iteramos sobre el array de scores para asociarlos a los documentos.
         for (int i = 0; i < score.Length; i++)

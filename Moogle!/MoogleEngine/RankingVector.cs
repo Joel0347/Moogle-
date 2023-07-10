@@ -10,7 +10,7 @@ public static class RankingVector
     public static float[] wordsIDF = new float[1];
 
     // Método para obtener los scores.
-    public static float[] GetScore(string[] query, float[] vectorIDF)
+    public static float[] GetScore(string[] query, float[] vectorIDF, double[] closenessValues)
     {
         wordsQuery = query;
         wordsIDF = vectorIDF;
@@ -34,8 +34,9 @@ public static class RankingVector
                 // Si no está pues le restamos valores a suma.
                 else suma -= 10 * query.Length;
             }   
-            // Copiamos el valor de suma en el array final en la posición i.
-            finalVector[i] = suma;
+            /* Copiamos el valor de suma en el array final en la posición i multiplicado por el inverso
+            del valor de cercanía.*/
+            finalVector[i] = (float) (suma / closenessValues[i]);
             
             // Reiniciamos suma en 0 para el siguiente Documento.
             suma = 0;

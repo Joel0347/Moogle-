@@ -9,12 +9,13 @@ public class Operators
     public static int IthasToBeInText(string[] query)
     {   
         int result = -1;
-        int TempIndex = -1; // Índice por si está la palabra también con asterisco.
+        int tempIndex = -1; // Índice por si está la palabra también con asterisco.
+        bool closeness = query.Contains("~")? true : false; // por si está el operador de cercanía.
 
         foreach (string word in query)
         {   
             // Copiamos el índice donde está el asterisco.
-            if (word.StartsWith("*")) TempIndex = Array.IndexOf(query, word);
+            if (word.StartsWith("*")) tempIndex = Array.IndexOf(query, word);
 
             if (word.StartsWith("^")) 
             {
@@ -31,16 +32,16 @@ public class Operators
                 }
 
                 // Si está la palabra con asterisco pero también aparece otra vez con ^.
-                else if (TempIndex != -1 && Document.Normalize(word).Replace(" ","") == Document.Normalize(query[TempIndex]).Replace(" ",""))
+                else if (tempIndex != -1 && Document.Normalize(word).Replace(" ","") == Document.Normalize(query[tempIndex]).Replace(" ",""))
                 {
-                    result = TempIndex;
+                    result = tempIndex;
                 }
 
                 else result = Array.IndexOf(query, word);
                 break;
             }
         }
-        return result;
+        return (closeness && result > Array.IndexOf(query, "~"))? result - 1 : result;
     }
 
     /* Método para comprobar si está el operador ! . En dicho caso guardamos el
@@ -49,6 +50,7 @@ public class Operators
     {   
         int result = -1;
         int TempIndex = -1; // Índice por si está la palabra también con asterisco.
+        bool closeness = query.Contains("~")? true : false; // por si está el operador de cercanía.
 
         foreach (string word in query)
         {   
@@ -79,7 +81,7 @@ public class Operators
                 break;
             }
         }
-        return result;
+        return (closeness && result > Array.IndexOf(query, "~"))? result - 1 : result;
     }
 
     /* Método para comprobar si está el operador * . En dicho caso multiplicamos el
@@ -108,5 +110,32 @@ public class Operators
             }
         }
         return result;
+    }
+
+    /* Método para el operador de cercanía. Le damos valor a cada texto acorde a la cercanía de las
+    palabras que estén entre el operador ~. */
+    public static double[] Closeness(string[] query)
+    {
+        double[] values = new double[Repository.titles.Length];
+
+        if (query.Contains("~")) {
+            int p = Array.IndexOf(query,"~");
+            for (int i = 0; i < values.Length; i++)
+            {
+                if (Repository.filesWords[i].Contains(query[p + 1]) && Repository.filesWords[i].Contains(query[p - 1])) {
+
+                    values[i] = Math.Abs(Array.IndexOf(Repository.filesWords[i], query[p + 1]) - 
+                    Array.IndexOf(Repository.filesWords[i], query[p - 1]));
+                }
+                else values[i] = 1;
+            }
+        }
+        else {
+            for (int i = 0; i < values.Length; i++)
+            {
+                values[i] = 1;
+            }
+        }
+        return values;
     }
 }

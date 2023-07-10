@@ -34,7 +34,7 @@ public class Document
         
         /* Con el método Replace de la clase Regex vamos a cambiar por " " todos los caracteres que 
         no sean "ñ" o los caracteres de la "a" a la "z" o los caracteres del "0" al "9", así como los operadores. */
-        texto = Regex.Replace(texto, @"[^ñ^!*a-z0-9]", " ");
+        texto = Regex.Replace(texto, @"[^ñ^!*~a-z0-9]", " ");
             
         return texto;
     }
