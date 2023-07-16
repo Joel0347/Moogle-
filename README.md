@@ -1,5 +1,6 @@
 # Moogle-
 First Project at MatCom
+
 Nombre: Joel Aparicio Tamayo. 
 Grupo: C-121.
 
@@ -19,11 +20,13 @@ El buscador funciona tanto al seleccionar el botón “Buscar”, como al presio
 El snippet mostrado en pantalla de cada documento muestra una vecindad de la primera aparición de la palabra de más peso de la query con respecto a dicho
 documento.
 
-Se ha implementado el operador de relevancia ( * ), el operador de obligatoriedad ( ^ ), y el operador de inexistencia ( ! ). 
+Se han implementado todos los operadores.
 
 Los operadores ^ y ! funcionan solo para la primera palabra de la query que los tenga. (Ej: “!hola !claudia” solo funcionará para “hola”, mientras que a “claudia” la tratará como una palabra normal)
 
 Pueden existir combinaciones de los operadores. (uno en cada palabra distinta, no puede haber dos juntos en una misma palabra)
     
 No escribir los símbolos de los operadores(!,^,*) en medio de dos palabras.(Ej: "hola*claudia", "ho^la","hola!hola")
+
+Usar el operador ~ solo una vez en cada búsqueda de la forma: palabra1 ~ palabra2.(con espacio entre las palabras y el operador)
 
