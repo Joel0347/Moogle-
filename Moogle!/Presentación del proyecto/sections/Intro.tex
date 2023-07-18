@@ -1,0 +1,85 @@
+\section{Introducción}\label{intro}
+
+\begin{frame}
+    \begin{columns}[t]
+        \begin{column}{.5\textwidth}
+          \tableofcontents[sections={1-2},currentsection]
+        \end{column}
+        \begin{column}{.5\textwidth}
+          \tableofcontents[sections={3-4},currentsection]
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{¿Qué es Moogle!?}
+
+\begin{frame}{¿Qué es Moogle!?}
+
+\begin{center}
+  Moogle! es una aplicación web cuyo propósito es buscar inteligentemente un texto en un conjunto de documentos. 
+  Está desarrollada con tecnología .NET Core 7.0, usando Blazor como 
+  *framework* web para la interfaz gráfica, y en el lenguaje C-Sharp.
+\end{center}
+
+\pause
+
+  
+\begin{center}
+  La aplicación está dividida en dos componentes fundamentales:
+
+
+  \ 
+
+
+\textit{\textbf{MoogleServer}} es un servidor web que renderiza la interfaz gráfica y sirve los resultados.
+
+
+\textit{\textbf{MoogleEngine}} es una biblioteca de clases donde está implementada la lógica 
+del algoritmo de búsqueda.
+
+\end{center}
+
+\end{frame}
+
+
+\subsection{Particularidades}
+\begin{frame}{Particularidades}
+
+\begin{itemize}
+
+  \item El proyecto ha sido probado con un repositorio de alrededor de 15 mil documentos cuyo peso era de 170 MB.
+  Con estos documentos el proyecto demora alrededor de 1 minuto inicialmente para cargar, y la búsqueda es 
+  casi instantánea.
+  \pause
+  \item La búsqueda muestra los 10 primeros resultados como máximo. (Pudieran ser más si hay scores repetidos)
+  \pause
+  \item El buscador funciona tanto al seleccionar el botón “Buscar”, como al presionar la tecla “Enter”.
+  \pause
+  \item El snippet mostrado en pantalla de cada documento muestra una vecindad de la primera aparición de la
+  palabra de más peso de la query con respecto a dicho documento.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Particularidades}
+  
+\begin{itemize}
+  
+  \item Se ha implementado el operador de relevancia {*}, el operador de obligatoriedad {$\wedge$}, 
+  el operador de inexistencia {!} y el operador de cercanía {$\thicksim$}. 
+  \pause
+  \item Los operadores {$\wedge$} y {!} funcionan solo para la primera palabra de la query que los 
+  tenga. (Ej: “!hola !Claudia” solo funcionará para “hola”, mientras que a “Claudia” la tratará 
+  como una palabra normal)
+  \pause
+  \item Pueden existir combinaciones de los operadores. (Uno en cada palabra distinta, no puede
+  haber dos juntos en una misma palabra)
+  \pause
+  \item El operador de cercanía se debe usar de la forma: palabra1 {$\thicksim$} palabra2 (espacio entre 
+  el operador y las palabras).
+
+\end{itemize}
+
+\end{frame}
+
