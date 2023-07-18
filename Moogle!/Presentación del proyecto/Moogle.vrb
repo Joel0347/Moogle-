@@ -1,9 +1,6 @@
 \frametitle{Ver código...}
 
-Link de la carpeta \texttt{MoogleEngine}:
-
-
-\
+{\small{Link de la carpeta \texttt{MoogleEngine}:}}
 
 
 \textcolor{blue}{\underline{\tiny\url{https://github.com/Joel0347/Moogle-/tree/main/Moogle!/MoogleEngine}}}
@@ -15,11 +12,20 @@ Link de la carpeta \texttt{MoogleEngine}:
 \
 
 
-Link de la carpeta \texttt{MoogleServer}:
+{\small{Link de la carpeta \texttt{MoogleServer}:}}
+
+
+\textcolor{blue}{\underline{\tiny\url{https://github.com/Joel0347/Moogle-/tree/main/Moogle!/MoogleServer}}}
 
 
 \
 
 
-\textcolor{blue}{\underline{\tiny\url{https://github.com/Joel0347/Moogle-/tree/main/Moogle!/MoogleServer}}}
+\
+
+
+{\small {Link del Informe más detallado:}}
+
+
+\textcolor{blue}{\underline{\tiny\url{https://github.com/Joel0347/Moogle-/tree/main/Moogle!/Informe del Proyecto}}}
 
