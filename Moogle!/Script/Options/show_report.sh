@@ -4,16 +4,16 @@ show_report() {
     cd ..
     cd 'Informe del Proyecto'
 
-    if [ ! -f 'Informe del proyecto'.pdf ]
+    if [ ! -f Informe.pdf ]
     then
-    pdflatex 'Informe del proyecto'.tex
+    pdflatex Informe.tex
     fi
 
     if [ $# -gt 0 ] 
     then
-    $ans 'Informe del proyecto'.pdf
+    $ans Informe.pdf
     else
-    xdg-open 'Informe del proyecto'.pdf
+    xdg-open Informe.pdf
     fi
 }
 
