@@ -32,7 +32,7 @@ elif [ $a = "n" ]
 then
 while true
 do
-echo -e "Type the command to open the file wiewer that you want (without the filename, \nbecause it is automatically added at the end of the command)"
+echo -e "Type the name of the file wiewer that you want (without the filename, \nbecause it is automatically added at the end)"
 read b
 if [[ $b = "" ]]
 then
