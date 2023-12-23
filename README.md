@@ -1,10 +1,12 @@
 # Moogle-
 
 
-> Primer Proyecto de Programación
+Primer Proyecto de Programación
 
->> Nombre: Joel Aparicio Tamayo. 
->> Grupo: C-121.
+> Nombre: Joel Aparicio Tamayo.
+
+
+> Grupo: C-121.
 
 Especificaciones y particularidades:
 
